@@ -7,23 +7,24 @@ type Props = {
   params: Promise<{locale: Locale}>;
 };
 
-export default function IndexPage({params}: Props) {
+export default function PathnamesPage({params}: Props) {
   const {locale} = use(params);
 
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations('IndexPage');
+  const t = useTranslations('PathnamesPage');
 
   return (
     <PageLayout title={t('title')}>
-      <p className="max-w-[590px]">
+      <div className="max-w-[490px]">
         {t.rich('description', {
+          p: (chunks) => <p className="mt-4">{chunks}</p>,
           code: (chunks) => (
             <code className="font-mono text-white">{chunks}</code>
           )
         })}
-      </p>
+      </div>
     </PageLayout>
   );
 }
