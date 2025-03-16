@@ -1,3 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    /* Font families */
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: Monaco, ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    /* Colors */
+    --color-slate-850: hsl(222deg 47% 16%);
+    --color-primary: #5fc3e7;
+    
+    /* Container settings */
+    --container-center: true;
+    --container-padding: 1rem;
+  }
+}
+
+/* Container max-width configuration */
+@layer components {
+  .container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    
+    @media (min-width: 640px) {
+      max-width: 50rem; /* This corresponds to your sm: '50rem' setting */
+    }
+  }
+}
+
