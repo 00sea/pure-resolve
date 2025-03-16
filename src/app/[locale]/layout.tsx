@@ -3,7 +3,7 @@ import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {ReactNode} from 'react';
 import {clsx} from 'clsx';
-import {Inter} from 'next/font/google';
+import {Inter, Baskervville} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
 import './styles.css';
@@ -14,6 +14,13 @@ type Props = {
 };
 
 const inter = Inter({subsets: ['latin']});
+
+export const garamond = Baskervville({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-garamond', // This creates a CSS variable
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
