@@ -1,7 +1,7 @@
 import {notFound} from 'next/navigation';
 import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
-import {ReactNode} from 'react';
+import {ReactNode, CSSProperties} from 'react';
 import {clsx} from 'clsx';
 import {Inter, Baskervville} from 'next/font/google';
 import {routing} from '@/i18n/routing';
@@ -46,8 +46,30 @@ export default async function LocaleLayout({children, params}: Props) {
   // Enable static rendering
   setRequestLocale(locale);
 
+  const localeSpecificStyles = {
+    de: {
+      // Arabic - right-to-left language
+      '--font-size-base': '1.05rem',
+      '--font-family': '"Noto Sans Arabic", sans-serif',
+    },
+    zh: {
+      // Chinese
+      '--font-size-base': '1.1rem',
+      '--font-family': '"Noto Sans SC", sans-serif',
+    },
+    en: {
+      // English
+      '--font-size-base': '1rem',
+      '--font-family': '"Inter", sans-serif',
+      '--text-sm': '0.9rem'
+    }
+  }[locale] || {
+    '--font-size-base': '1rem',
+    '--font-family': '"Inter", sans-serif',
+  };
+
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full" lang={locale} style={localeSpecificStyles as CSSProperties}>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <NextIntlClientProvider>
           <Navigation />

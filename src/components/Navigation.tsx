@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <div className="border-b-1 border-slate-400 bg-slate-950">
       <nav className="container flex justify-center p-3 text-white">
-        <div className="mr-auto">
+        <div className="mr-auto flex items-center">
           <Logo />
         </div>
         <div className="flex justify-center space-x-5">

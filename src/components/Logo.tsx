@@ -17,9 +17,9 @@ export default function TextLogo({
   taglineClassName = ''
 }: TextLogoProps) {
   const LogoContent = () => (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col justify-center">
       <span 
-        className={`font-garamond text-2xl tracking-tight ${titleClassName}`}
+        className={`font-garamond text-2xl leading-none tracking-tight ${titleClassName}`}
         style={{ fontFamily: 'Baskervville' }}
       >
         {title}
