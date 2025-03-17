@@ -13,10 +13,10 @@ export default function Navigation() {
           <Logo />
         </div>
         <div className="flex justify-center space-x-5">
-          <NavigationLink href="/">{'HOME'}</NavigationLink>
-          <NavigationLink href="/pathnames">{'ABOUT'}</NavigationLink>
-          <NavigationLink href="/pathnames">{'VANCOUVER ISLAND'}</NavigationLink>
-          <NavigationLink href="/pathnames">{'PATHNAMES'}</NavigationLink>
+          <NavigationLink href="/">{t('home')}</NavigationLink>
+          <NavigationLink href="/pathnames">{t('about')}</NavigationLink>
+          <NavigationLink href="/pathnames">{t('vanisland')}</NavigationLink>
+          <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
         </div>
         <div className="ml-auto">
           <LocaleSwitcher />

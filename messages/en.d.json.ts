@@ -21,8 +21,10 @@ declare const messages: {
     "name": "next-intl example"
   },
   "Navigation": {
-    "home": "Home",
-    "pathnames": "Pathnames"
+    "home": "HOME",
+    "pathnames": "PATHNAMES",
+    "about": "ABOUT",
+    "vanisland": "VANCOUVER ISLAND"
   },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
