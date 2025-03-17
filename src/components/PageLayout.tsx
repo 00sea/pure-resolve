@@ -1,21 +1,30 @@
 import {useTranslations} from 'next-intl';
 import {ReactNode} from 'react';
 import ExternalLink from './ExternalLink';
+import BackgroundCarousel from './BackgroundCarousel'; // New import
 
 type Props = {
   children?: ReactNode;
   title: ReactNode;
+  carouselImages?: {src: string; alt: string}[]; // Optional prop for carousel images
 };
 
-export default function PageLayout({children, title}: Props) {
+export default function PageLayout({children, title, carouselImages}: Props) {
   const t = useTranslations('PageLayout');
 
   return (
-    <div className="relative flex grow flex-col bg-slate-850 py-36">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-0 top-1 size-[20500px] translate-x-[-47.5%] rounded-full bg-gradient-to-b from-slate-900 via-cyan-500" />
-      </div>
-      <div className="container relative flex grow flex-col px-4">
+    <div className="relative flex grow flex-col bg-black py-36">
+      {/* Background Carousel */}
+      {carouselImages && carouselImages.length > 0 && (
+        <div className="absolute inset-0 overflow-hidden z-0">
+          <BackgroundCarousel images={carouselImages} />
+          {/* Add an overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+      )}
+      
+      {/* Content (positioned above the carousel) */}
+      <div className="container relative z-10 flex grow flex-col px-4">
         <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
           {title}
         </h1>

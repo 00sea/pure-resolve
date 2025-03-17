@@ -1,0 +1,49 @@
+{
+    "Error": {
+      "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+      "title": "Something went wrong!"
+    },
+    "IndexPage": {
+      "description": "这是一个基本示例，演示了 <code>next-intl</code> 与 Next.js App Router 的用法。尝试更改右上角的语言环境，看看内容如何变化。",
+      "title": "next-intl 示例"
+    },
+    "LocaleLayout": {
+      "title": "next-intl example"
+    },
+    "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+    },
+    "Manifest": {
+      "name": "next-intl 示例"
+    },
+    "Navigation": {
+      "home": "主页",
+      "pathnames": "路径名",
+      "about": "关于",
+      "vanisland": "温哥华岛"
+    },
+    "NotFoundPage": {
+      "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+      "title": "Page not found"
+    },
+    "PageLayout": {
+      "links": {
+        "docs": {
+          "description": "在官方文档中了解有关 next-intl 的更多信息。",
+          "href": "https://next-intl.dev",
+          "title": "文档"
+        },
+        "source": {
+          "description": "在 GitHub 上浏览此示例的源代码。",
+          "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+          "title": "源代码"
+        }
+      }
+    },
+    "PathnamesPage": {
+      "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
+      "title": "Pathnames"
+    }
+  }
+  

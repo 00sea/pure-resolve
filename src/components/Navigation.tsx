@@ -1,18 +1,26 @@
 import {useTranslations} from 'next-intl';
 import LocaleSwitcher from './LocaleSwitcher';
 import NavigationLink from './NavigationLink';
+import Logo from './Logo';
 
 export default function Navigation() {
   const t = useTranslations('Navigation');
 
   return (
-    <div className="bg-slate-850">
-      <nav className="container flex justify-between p-2 text-white">
-        <div>
+    <div className="border-b-1 border-slate-400 bg-slate-950">
+      <nav className="container flex justify-center p-3 text-white">
+        <div className="mr-auto flex items-center">
+          <Logo />
+        </div>
+        <div className="flex justify-center space-x-5">
           <NavigationLink href="/">{t('home')}</NavigationLink>
+          <NavigationLink href="/pathnames">{t('about')}</NavigationLink>
+          <NavigationLink href="/pathnames">{t('vanisland')}</NavigationLink>
           <NavigationLink href="/pathnames">{t('pathnames')}</NavigationLink>
         </div>
-        <LocaleSwitcher />
+        <div className="ml-auto">
+          <LocaleSwitcher />
+        </div>
       </nav>
     </div>
   );
